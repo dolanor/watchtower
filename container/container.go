@@ -134,7 +134,7 @@ func (c Container) runtimeConfig() *dockercontainer.Config {
 
 	config.Labels = stringMapSubtract(config.Labels, imageConfig.Labels)
 
-	config.Volumes = structMapSubtract(config.Volumes, imageConfig.Volumes)
+	config.Volumes = config.Volumes
 
 	// subtract ports exposed in image from container
 	for k, _ := range config.ExposedPorts {
